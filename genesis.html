@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1561.61">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Arial}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Arial; min-height: 21.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Genesis: The Beginning - Hidden Object Game&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #0b0214;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Times New Roman', Times, serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#game-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100vw;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 177.78vw;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 562px;<span class="Apple-converted-space">   </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-image: url('image_KehOvm.png');<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-size: 100% 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-repeat: no-repeat;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 30px rgba(0,0,0,0.8);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Dynamic Header HUD Layer Text Engines */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hud-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffe875;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Georgia', serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-shadow: 1px 1px 3px rgba(0,0,0,0.9);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 15;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#items-counter {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 11%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 11.2%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 16%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 3%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#score-display {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 67%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 11.2%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 15%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 3%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hotspot {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>/* background-color: rgba(255, 0, 0, 0.3); */ /* Remove slashes to visually see placement circles */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translate(-50%, -50%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 10;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.score-popup {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffe875;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px #ffbc00;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>pointer-events: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: floatUp 1.2s ease-out forwards;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 20;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Georgia', serif;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes floatUp {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>100% { opacity: 0; transform: translate(-50%, -150%) scale(1.3); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.ui-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="game-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Live UI HUD Text Counters positioned right over your native frame text regions --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hud-text" id="items-counter"&gt;ITEMS: 4 / 15&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hud-text" id="score-display"&gt;3,450&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Clickable Object Zones --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hotspot" data-item="noahs-ark" <span class="Apple-converted-space">      </span>style="left: 38.5%; top: 32.2%; width: 12%; height: 7%;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hotspot" data-item="abrahams-tent" <span class="Apple-converted-space">  </span>style="left: 69.0%; top: 47.5%; width: 15%; height: 9%;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hotspot" data-item="josephs-coat"<span class="Apple-converted-space">    </span>style="left: 85.2%; top: 50.1%; width: 10%; height: 8%;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hotspot" data-item="egyptian-grain"<span class="Apple-converted-space">  </span>style="left: 77.5%; top: 51.0%; width: 8%;<span class="Apple-converted-space">  </span>height: 8%;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hotspot" data-item="garden-tree" <span class="Apple-converted-space">    </span>style="left: 15.0%; top: 35.0%; width: 20%; height: 20%;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hotspot" data-item="serpent" <span class="Apple-converted-space">        </span>style="left: 11.2%; top: 32.5%; width: 6%;<span class="Apple-converted-space">  </span>height: 5%;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hotspot" data-item="apple" <span class="Apple-converted-space">          </span>style="left: 18.1%; top: 34.2%; width: 5%;<span class="Apple-converted-space">  </span>height: 4%;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hotspot" data-item="altar-of-stones" style="left: 88.0%; top: 39.5%; width: 12%; height: 8%;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hotspot" data-item="rainbow" <span class="Apple-converted-space">        </span>style="left: 62.0%; top: 29.0%; width: 25%; height: 8%;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hotspot" data-item="dove"<span class="Apple-converted-space">            </span>style="left: 21.0%; top: 30.5%; width: 5%;<span class="Apple-converted-space">  </span>height: 4%;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hotspot" data-item="well-of-water" <span class="Apple-converted-space">  </span>style="left: 39.2%; top: 59.5%; width: 14%; height: 10%;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hotspot" data-item="camel" <span class="Apple-converted-space">          </span>style="left: 63.5%; top: 41.2%; width: 10%; height: 6%;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hotspot" data-item="golden-ring" <span class="Apple-converted-space">    </span>style="left: 21.5%; top: 65.2%; width: 6%;<span class="Apple-converted-space">  </span>height: 4%;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hotspot" data-item="pillar-of-salt"<span class="Apple-converted-space">  </span>style="left: 87.5%; top: 32.8%; width: 6%;<span class="Apple-converted-space">  </span>height: 10%;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hotspot" data-item="bundle-of-myrrh" style="left: 84.8%; top: 65.0%; width: 9%;<span class="Apple-converted-space">  </span>height: 8%;"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- System Control Targets --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="ui-btn" id="btn-replay" style="left: 84.5%; top: 10.8%; width: 6.5%; height: 3.8%;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="ui-btn" id="btn-pause"<span class="Apple-converted-space">  </span>style="left: 91.5%; top: 10.8%; width: 6.5%; height: 3.8%;"&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let itemsFoundCount = 4;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>let currentScore = 3450; <span class="Apple-converted-space"> </span></p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const foundRegistry = {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>'noahs-ark': false, 'abrahams-tent': false, 'josephs-coat': false,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>'egyptian-grain': false, 'garden-tree': false, 'serpent': false,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>'apple': false, 'altar-of-stones': false, 'rainbow': false,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>'dove': true, 'well-of-water': true, 'camel': false,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>'golden-ring': false, 'pillar-of-salt': false, 'bundle-of-myrrh': false</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const gameContainer = document.getElementById('game-container');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const itemsCounterEl = document.getElementById('items-counter');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const scoreDisplayEl = document.getElementById('score-display');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Master click logic handler</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gameContainer.addEventListener('click', function(e) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const target = e.target;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (target.classList.contains('hotspot')) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const itemKey = target.getAttribute('data-item');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (foundRegistry[itemKey]) return;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>foundRegistry[itemKey] = true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>itemsFoundCount++;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentScore += 100;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Updates HUD interfaces instantly with formatted values</p>
+<p class="p1"><span class="Apple-converted-space">            </span>itemsCounterEl.innerText = `ITEMS: ${itemsFoundCount} / 15`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>scoreDisplayEl.innerText = currentScore.toLocaleString();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>createScorePopup(e.clientX, e.clientY);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>target.style.pointerEvents = 'none';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (itemsFoundCount === 15) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; { alert("Glory! You have discovered all the foundational elements of Genesis!"); }, 500);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function createScorePopup(clientX, clientY) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const rect = gameContainer.getBoundingClientRect();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const popup = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>popup.className = 'score-popup';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>popup.innerText = '+100 PTS';</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const xPercent = ((clientX - rect.left) / rect.width) * 100;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const yPercent = ((clientY - rect.top) / rect.height) * 100;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>popup.style.left = `${xPercent}%`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>popup.style.top = `${yPercent}%`;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>gameContainer.appendChild(popup);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setTimeout(() =&gt; { popup.remove(); }, 1200);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('btn-replay').addEventListener('click', (e) =&gt; { e.stopPropagation(); alert('Restarting chapter layout...'); });</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('btn-pause').addEventListener('click', (e) =&gt; { e.stopPropagation(); alert('Game Paused.'); });</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
